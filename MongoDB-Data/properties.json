@@ -1,0 +1,228 @@
+[{
+  "_id": {
+    "$oid": "6393d021352ecc81e60e9c3a"
+  },
+  "prop_id": 1,
+  "host_user_id" : 1,
+  "title": "Tree House",
+  "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+  "images": [
+      "https://images.unsplash.com/photo-1520099823969-e9c747f601a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=411&q=80",
+      "https://images.unsplash.com/photo-1550355191-aa8a80b41353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "https://images.unsplash.com/photo-1581881010555-7cefbe43ad08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "https://images.unsplash.com/photo-1581881010555-7cefbe43ad08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "https://images.unsplash.com/photo-1581881010555-7cefbe43ad08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+
+  ],
+  "price": 130,
+  "AverageRatings": 4.8,
+  "userReview": [
+
+    {
+        "userName": "Jay",
+        "comments": "exceptional food, friendly staff and experience. this be go place again the future. thank you",
+        "commentedDate": "22 January 2022",
+        "rating": 4.6
+    },
+    {
+        "userName": "Jay",
+        "comments": "A good location with a nice lawn(can play mini football/cricket) and a barbeque place. Excellent food and services by Mr.Rajappan & Team. ",
+        "commentedDate": "23 January 2022",
+        "rating": 4.6
+    },
+    {
+        "userName": "Jay",
+        "comments": "exceptional food, friendly staff and experience. this be go place again the future. thank you",
+        "commentedDate": "22 January 2022",
+        "rating": 4.6
+    },
+    {
+        "userName": "Jay",
+        "comments": "A good location with a nice lawn(can play mini football/cricket) and a barbeque place. Excellent food and services by Mr.Rajappan & Team. ",
+        "commentedDate": "22 January 2022",
+        "rating": 4.6
+    }
+  ],
+  "house_type": "private",
+  "prop_type": "metropolitan",
+  "max_guests": 4,
+  "bedrooms": 2,
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Richardson",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
+  "props_ratings": [
+    2001
+  ],
+  "ameneties": {
+    "AC": true,
+    "hair_dryer": true,
+    "fireplace": false,
+    "pet_friendly": false
+  },
+  "house_rules": [
+    "Check in: 11 am",
+    "Check out: 10 am"
+  ],
+  "available": true
+},{
+  "_id": {
+    "$oid": "6393d3b3352ecc81e60e9c40"
+  },
+  "prop_id": 2,
+  "title": "Jill's House",
+  "house_type": "private",
+  "prop_type": "countryside",
+  "max_guests": 4,
+  "bedrooms": 4,
+  "address": {
+    "street": "456 Green Street",
+    "city": "Austin",
+    "state": "TX",
+    "zipcode": 75780,
+    "country": "USA"
+  },
+  "props_ratings": [
+    2002
+  ],
+  "ameneties": {
+    "AC": true,
+    "hair_dryer": false,
+    "fireplace": true,
+    "pet_friendly": true
+  },
+  "house_rules": [
+    8,
+    11
+  ],
+  "photo": "link/public",
+  "price": {
+    "base_fee": 300,
+    "cleaning_fee": 50,
+    "taxes": 40
+  },
+  "available": true
+},{
+  "_id": {
+    "$oid": "6393d42c352ecc81e60e9c41"
+  },
+  "prop_id": 3,
+  "title": "Parth's House",
+  "house_type": "shared",
+  "prop_type": "metropolitan",
+  "max_guests": 2,
+  "bedrooms": 1,
+  "address": {
+    "street": "76th Packard Street",
+    "apt": 22,
+    "city": "New York City",
+    "state": "NY",
+    "zipcode": 18980,
+    "country": "USA"
+  },
+  "props_ratings": [
+    2003,
+    2004
+  ],
+  "ameneties": {
+    "AC": true,
+    "hair_dryer": true,
+    "fireplace": false,
+    "pet_friendly": false,
+    "breakfast": true
+  },
+  "house_rules": [
+    10,
+    13
+  ],
+  "photo": "link/public",
+  "price": {
+    "base_fee": 400,
+    "cleaning_fee": 60,
+    "taxes": 40
+  },
+  "available": false
+},{
+  "_id": {
+    "$oid": "6393d4ea352ecc81e60e9c43"
+  },
+  "prop_id": 4,
+  "title": "Zostel",
+  "house_type": "shared",
+  "prop_type": "countryside",
+  "max_guests": 12,
+  "bedrooms": 12,
+  "address": {
+    "street": "Saint Bernard Street",
+    "city": "Jamestown",
+    "state": "VA",
+    "zipcode": 13980,
+    "country": "USA"
+  },
+  "props_ratings": [
+    2005,
+    2006,
+    2007
+  ],
+  "ameneties": {
+    "AC": false,
+    "hair_dryer": true,
+    "fireplace": true,
+    "pet_friendly": false,
+    "breakfast": false,
+    "iron": false
+  },
+  "house_rules": [
+    9,
+    12
+  ],
+  "photo": "link/public",
+  "price": {
+    "base_fee": 120,
+    "cleaning_fee": 30,
+    "taxes": 20
+  },
+  "available": true
+},{
+  "_id": {
+    "$oid": "6393d77d352ecc81e60e9c44"
+  },
+  "prop_id": 5,
+  "title": "Pepe's place",
+  "house_type": "private",
+  "prop_type": "metropolitan",
+  "max_guests": 2,
+  "bedrooms": 1,
+  "address": {
+    "street": "Kingstown 78th",
+    "apt": 4409,
+    "city": "Houston",
+    "state": "TX",
+    "zipcode": 98980,
+    "country": "USA"
+  },
+  "props_ratings": [
+    2007
+  ],
+  "ameneties": {
+    "AC": true,
+    "hair_dryer": true,
+    "fireplace": false,
+    "pet_friendly": false
+  },
+  "house_rules": [
+    9,
+    13
+  ],
+  "photo": "link/public",
+  "price": {
+    "base_fee": 200,
+    "cleaning_fee": 60,
+    "taxes": 40
+  },
+  "available": false
+}]

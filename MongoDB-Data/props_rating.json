@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6393dbb4352ecc81e60e9c56"
+  },
+  "prop_id": 1,
+  "comments": [
+    {
+        "userId" : 1,
+        "propertyId": 2,
+        "userName": "Kavya",
+        "commented_date": "22 October 2022"
+    }
+  ]
+}]

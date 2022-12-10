@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6372f733d3dfd1b9181e9ca5"
+  },
+  "user_id": 201,
+  "first_name": "Kavya",
+  "last_name": "Mehra",
+  "email": "kavmeh@gmail.com",
+  "password": "kavmeh@gmail.com",
+  "is_host": false,
+  "favorites": [
+    1,
+    3
+  ],
+  "languages_known": [
+    "English",
+    "Spanish"
+  ]
+},{
+  "_id": {
+    "$oid": "6393d816352ecc81e60e9c46"
+  },
+  "user_id": 202,
+  "first_name": "Kevin",
+  "last_name": "Marcus",
+  "email": "kevmar@gmail.com",
+  "password": "kevmar@gmail.com",
+  "is_host": false,
+  "favorites": [
+    3,
+    5
+  ],
+  "languages_known": [
+    "English",
+    "Spanish"
+  ]
+},{
+  "_id": {
+    "$oid": "6393da9e352ecc81e60e9c4f"
+  },
+  "user_id": 203,
+  "first_name": "Charles",
+  "last_name": "Schen",
+  "email": "chasch@gmail.com",
+  "password": "chasch@gmail.com",
+  "is_host": true,
+  "favorites": [
+    3
+  ],
+  "languages_known": [
+    "English",
+    "Spanish"
+  ]
+}]

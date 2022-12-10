@@ -6,7 +6,7 @@ const Register = () => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    var passwordFlag = false;
     let handleRegistration = async (e) => {
         e.preventDefault();
         try{
@@ -47,6 +47,7 @@ const Register = () => {
             // TODO - more complex regex check for strength
             if (password.length < 8){
                 passwordBox.style.borderColor = "red";
+                passwordFlag = true;
                 throw new Error('Password should be atleast 8 characters long!');
             }
 
@@ -104,12 +105,14 @@ const Register = () => {
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} />
+                    
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
+                    {passwordFlag && <p class="error" >Password should be atleast 8 characters long! //make this red color</p>}
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

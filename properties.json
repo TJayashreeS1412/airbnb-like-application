@@ -1,0 +1,40 @@
+{
+    "propertyId": 1,
+    "name": "",
+    "houseType": "shared",
+    "guests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "bathrooms": 2,
+    "Address": {
+      "PrimaryAddr": "3100 Northside blvd",
+      "Apt": "234",
+      "City": "Richardson",
+      "State": "TX",
+      "Zipcode": 75080,
+      "Country": "USA"
+    },
+    "Ratings": null,
+    "Amenities": {
+      "AC": true,
+      "HairDryer": true
+    },
+    "Reservations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "HouseRules": [
+      "checkin: 10 AM",
+      "checkout: 11AM"
+    ],
+    "photo": "link/public",
+    "price": {
+      "baseFee": 200,
+      "cleaningFee": 20,
+      "taxes": 10
+    },
+    "prop_id": 3,
+    "BookedDates": null
+}

@@ -6,7 +6,6 @@ var logger = require('morgan');
 const cors = require('cors');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var registerRouter = require('./routes/register');
 var propertiesRouter = require('./routes/properties');
 var reservationsRouter = require('./routes/reservations');

@@ -1,3 +1,32 @@
-.user-review-container{
+.user-review-container {
     gap: 30px 0;
+}
+
+.add-comment {
+    border-radius: 30px;
+
+}
+
+.comments-textarea {
+    height: 150px !important;
+}
+
+.star-separator {
+    margin: 2px 0px;
+}
+
+.property-carousel {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.property-image {
+    border-radius: 10px;
+}
+
+.property-reservation-card {
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    border-radius: 10px;
+    min-width: 350px;
 }

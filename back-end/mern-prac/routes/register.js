@@ -13,7 +13,7 @@ router.get('/', function(req, res){
 });
 
 router.get('/user', function(req, res) {
-	collection.findOne({ email: req.query.id }, function(err, user){
+	collection.findOne({ userId: Number(req.query.userId) }, function(err, user){
 		if (err) throw err;
 	  	res.json(user);
 	});
@@ -21,10 +21,13 @@ router.get('/user', function(req, res) {
 
 router.post('/', function(req, res){
     collection.insert({
-        firstName : req.body.firstName,
+        userId: req.body.userId,
+        firstName : req.body.first_name,
         lastName : req.body.lastName,
         email : req.body.email,
-        password : req.body.password
+        password : req.body.password,
+        isHost: req.body.isHost,
+        languagesKnown: req.body.languagesKnown
     }, function(err, user){
         if (err) throw err;
         res.json(user);

@@ -13,7 +13,7 @@ router.get('/', function(req, res){
 });
 
 router.get('/reservation', function(req, res) {
-	collection.find({ reservation_id: Number(req.query.id) }, function(err, reservation){
+	collection.find({ reservationId: Number(req.query.reservationId) }, function(err, reservation){
 		if (err) throw err;
 	  	res.json(reservation);
 	});
@@ -21,10 +21,10 @@ router.get('/reservation', function(req, res) {
 
 router.put('/', function(req, res) {
 	//req.body is used to read form input
-	collection.update({reservation_id : Number(req.query.id )},
+	collection.update({reservationId : Number(req.query.reservationId )},
 		{ $set: {
-        start_date: req.body.start_date,
-        end_date: req.body.end_date
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
 		}
 	}, function(err, reservation){
 		if (err) throw err;
@@ -36,10 +36,11 @@ router.put('/', function(req, res) {
 router.post('/', function(req, res) {
 	//req.body is used to read form input
 	collection.insert({
-    reservation_id: req.body.reservation_id,
-    start_date: req.body.start_date,
-    end_date: req.body.end_date,
-    property_id: req.body.property_id
+    reservationId: req.body.reservationId,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    propertyId: req.body.propertyId,
+	userId: req.body.userId
 	}, function(err, reservation){
 		if (err) throw err;
 		// if insert is successfull, it will return newly inserted object
@@ -48,7 +49,7 @@ router.post('/', function(req, res) {
 });
 
 router.delete('/', function(req, res) {
-	collection.remove({ reservation_id: Number(req.query.id) }, function(err, reservation){
+	collection.remove({ reservationId: Number(req.query.reservationId) }, function(err, reservation){
 		if (err) throw err;
 	  	res.json(reservation);
 	});

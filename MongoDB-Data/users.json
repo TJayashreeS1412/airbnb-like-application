@@ -1,63 +1,63 @@
  db.users.insertMany(
 [{
-  "user_id": 201,
-  "first_name": "Kavya",
-  "last_name": "Mehra",
+  "userId": 201,
+  "firstName": "Kavya",
+  "lastName": "Mehra",
   "email": "kavmeh@gmail.com",
   "password": "kavmeh@gmail.com",
-  "is_host": false,
+  "isHost": false,
   "favorites": [
     1,
     3
   ],
-  "languages_known": [
+  "languagesKnown": [
     "English",
     "Spanish"
   ]
 },{
-  "user_id": 202,
-  "first_name": "Kevin",
-  "last_name": "Marcus",
+  "userId": 202,
+  "firstName": "Kevin",
+  "lastName": "Marcus",
   "email": "kevmar@gmail.com",
   "password": "kevmar@gmail.com",
-  "is_host": false,
+  "isHost": false,
   "favorites": [
     3,
     5
   ],
-  "languages_known": [
+  "languagesKnown": [
     "English",
     "Spanish"
   ]
 },{
-  "user_id": 203,
-  "first_name": "Charles",
-  "last_name": "Schen",
+  "userId": 203,
+  "firstName": "Charles",
+  "lastName": "Schen",
   "email": "chasch@gmail.com",
   "password": "chasch@gmail.com",
-  "is_host": true,
+  "isHost": true,
   "favorites": [
     3
   ],
   "reservations": [],
   "properties" :[], 
-  "languages_known": [
+  "languagesKnown": [
     "English",
     "Spanish"
   ]
 },{
-  "user_id": 204,
-  "first_name": "Macy",
-  "last_name": "Stevens",
+  "userId": 204,
+  "firstName": "Macy",
+  "lastName": "Stevens",
   "email": "macy@gmail.com",
   "password": "stevens",
-  "is_host": true,
+  "isHost": true,
   "favorites": [
     3
   ],
   "reservations": [],
   "properties" :[], 
-  "languages_known": [
+  "languagesKnown": [
     "English",
     "Spanish"
   ]

@@ -13,7 +13,7 @@ router.get('/', function(req, res){
 });
 
 router.get('/property', function(req, res) {
-	collection.findOne({ prop_id: Number(req.query.id) }, function(err, property){
+	collection.findOne({ propId: Number(req.query.propId) }, function(err, property){
 		if (err) throw err;
 		res.send(property);
 		// res.render('index',{tile: property});
@@ -21,9 +21,9 @@ router.get('/property', function(req, res) {
 	});
 });
 
-router.put('/:id', function(req, res) {
+router.put('/:propId', function(req, res) {
 	//req.body is used to read form input
-	collection.update({prop_id: Number(req.query.id) },
+	collection.update({propId: Number(req.query.propId) },
 		{ $set: {
 		name: req.body.title,
         Ratings: req.body.props_ratings,
@@ -39,11 +39,10 @@ router.put('/:id', function(req, res) {
 router.post('/', function(req, res) {
 	//req.body is used to read form input
 	collection.insert({ 
-    prop_id : req.body.prop_id,
+	propId : req.body.propId,
     title: req.body.title,
-    houseType: req.body.house_type,
-    propType: req.body.prop_type,
-    guests: req.body.max_guests,
+    houseType: req.body.houseType,
+    uests: req.body.max_guests,
     bedrooms: req.body.bedrooms,
     address: req.body.address,
     Ratings: req.body.props_rating,

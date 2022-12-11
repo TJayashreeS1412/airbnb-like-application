@@ -1,19 +1,13 @@
 db.reservations.insertMany([{
-  "_id": {
-    "$oid": "6372f519d3dfd1b9181e9ca1"
-  },
-  "reservation_id": 101,
-  "start_date": "01222023",
-  "end_date": "02262023",
-  "property_id": 1,
-  "user_id": 201
+  "reservationId": 101,
+  "startDate": "01222023",
+  "endDate": "02262023",
+  "propertyId": 1,
+  "userId": 201
 },{
-  "_id": {
-    "$oid": "6372f7b1d3dfd1b9181e9cb2"
-  },
-  "reservation_id": 102,
-  "start_date": "02232023",
-  "end_date": "02282023",
-  "property_id": 2,
-  "user_id": 202
+  "reservationId": 102,
+  "startDate": "02232023",
+  "endDate": "02282023",
+  "propertyId": 2,
+  "userId": 202
 }]);

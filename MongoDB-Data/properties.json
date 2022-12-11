@@ -1,6 +1,6 @@
 db.properties.insertMany([{
-  "prop_id": 1,
-  "host_user_id" : 203,
+  "propId": 1,
+  "hostId" : 203,
   "hostName" : "Charles Schen",
   "title": "NEW! Stunning Broken Bow Cabin w/ Hot Tub + Views!",
   "description": "Nestled in the woods of Broken Bow, this hidden gem awaits a lucky group of travelers looking to experience luxury amenities and ample conveniences all wrapped into one. The 3-bedroom, 3-bathroom cabin boasts a modern-chic feel, complete with stylish decor, a variety of sleeping arrangements, and plenty of outdoor spaces to enjoy the peaceful surroundings. The vacation rental is also just moments from the area's best spots like Beavers Bend State Park and local wineries and eateries.",
@@ -46,7 +46,7 @@ db.properties.insertMany([{
         "rating": 4.6
     }
   ],
-  "house_type": "private",
+  "houseType": "private",
   "maxGuests": 8,
   "bedrooms": 3,
   "beds": 6,
@@ -60,7 +60,7 @@ db.properties.insertMany([{
     "iron": true,
     "washer": true
   },
-  "house_rules": [
+  "houseRules": [
     "Check-in after 4:00 PM",
     "Checkout before 11:00 AM",
     "Pets allowed",
@@ -68,8 +68,8 @@ db.properties.insertMany([{
   ]
 },
 {
-  "prop_id": 2,
-  "host_user_id" : 203,
+  "propId": 2,
+  "hostId" : 203,
   "hostName" : "Charles Schen",
   "title": "Private Mountain Retreat Near Dtwn & Hiwassee Lake",
   "description": "Blue skies and clear mountain air are right around the corner at this striking vacation rental. Located on an acre of land in the heart of Murphy, this 2-bedroom, 2-bathroom cabin offers a serene escape from the stresses of everyday life. Spend quiet days on the water at Chatuge Lake, or enjoy a peaceful afternoon on the trails at Nantahala National Forest. With its rustic-chic interior, stunning deck space, and breathtaking views, ‘Cherokee Way’ is the perfect place for your next getaway.",
@@ -113,8 +113,8 @@ db.properties.insertMany([{
         "rating": 4.6
     }
   ],
-  "house_type": "private",
-  "max_guests": 6,
+  "houseType": "private",
+  "maxGuests": 6,
   "bedrooms": 2,
   "beds": 3,
   "baths": 2,
@@ -127,7 +127,7 @@ db.properties.insertMany([{
     "iron": true,
     "washer": true
   },
-  "house_rules": [
+  "houseRules": [
     "Check-in after 4:00 PM",
     "Checkout before 11:00 AM",
     "Pets allowed",
@@ -135,8 +135,8 @@ db.properties.insertMany([{
   ]
 },
 {
-  "prop_id": 3,
-  "host_user_id" : 204,
+  "propId": 3,
+  "hostId" : 204,
   "hostName" : "Macy Stevens",
   "title": "Private HOT TUB!! ARCADE in home w/ POOL TABLE!!",
   "description": "We book quickly! Wildwood Cottage is perfect for large groups desiring a luxurious getaway. No expense has been spared on the amenities. The interior furnishings were chosen by a Professional Decorator. 3 story Cottage with 2 living areas, 6 bedrooms (2 Masters) and 5 Bathrooms. Be our guests.... Enjoy morning coffee on our large deck with a peaceful view of the woods and hills. The bird feeder will bring you company even as you eat breakfast on our large main level deck.",
@@ -180,8 +180,8 @@ db.properties.insertMany([{
         "rating": 4.6
     }
   ],
-  "house_type": "private",
-  "max_guests": 6,
+  "houseType": "private",
+  "maxGuests": 6,
   "bedrooms": 2,
   "beds": 3,
   "baths": 2,
@@ -194,7 +194,7 @@ db.properties.insertMany([{
     "iron": true,
     "washer": true
   },
-  "house_rules": [
+  "houseRules": [
     "Check-in after 4:00 PM",
     "Checkout before 11:00 AM",
     "Pets allowed",
@@ -202,8 +202,8 @@ db.properties.insertMany([{
   ]
 },
 {
-  "prop_id": 4,
-  "host_user_id" : 204,
+  "propId": 4,
+  "hostId" : 204,
   "hostName" : "Macy Stevens",
   "title": "Woodsy Abode w/ Covered Deck & Lake Access!",
   "description": "Experience the tranquil beauty of Livingston when you stay in this cozy vacation rental. Featuring a stunning rustic-chic interior, this 3-bedroom, 2.5-bathroom cabin is a must-stay. Spend time boating, fishing, and swimming at Lake Livingston, or enjoy a fun-filled afternoon at Lake Park - both within walking distance! After a day full of waterside adventure, return to the fully equipped kitchen or covered deck to kick back and relax with your loved ones.",
@@ -247,8 +247,8 @@ db.properties.insertMany([{
         "rating": 4.6
     }
   ],
-  "house_type": "private",
-  "max_guests": 8,
+  "houseType": "private",
+  "maxGuests": 8,
   "bedrooms": 3,
   "beds": 5,
   "baths": 2.5,
@@ -261,7 +261,7 @@ db.properties.insertMany([{
     "iron": true,
     "washer": true
   },
-  "house_rules": [
+  "houseRules": [
     "Check-in after 4:00 PM",
     "Checkout before 11:00 AM",
     "Pets allowed",
@@ -269,8 +269,8 @@ db.properties.insertMany([{
   ]
 },
 {
-  "prop_id": 5,
-  "host_user_id" : 203,
+  "propId": 5,
+  "hostId" : 203,
   "hostName" : "Charles Schen",
   "title": "Woodsy Abode w/ Covered Deck & Lake Access!",
   "description": "Experience the tranquil beauty of Livingston when you stay in this cozy vacation rental. Featuring a stunning rustic-chic interior, this 3-bedroom, 2.5-bathroom cabin is a must-stay. Spend time boating, fishing, and swimming at Lake Livingston, or enjoy a fun-filled afternoon at Lake Park - both within walking distance! After a day full of waterside adventure, return to the fully equipped kitchen or covered deck to kick back and relax with your loved ones.",
@@ -314,8 +314,8 @@ db.properties.insertMany([{
         "rating": 4.6
     }
   ],
-  "house_type": "private",
-  "max_guests": 8,
+  "houseType": "private",
+  "maxGuests": 8,
   "bedrooms": 3,
   "beds": 5,
   "baths": 2.5,
@@ -328,7 +328,7 @@ db.properties.insertMany([{
     "iron": true,
     "washer": true
   },
-  "house_rules": [
+  "houseRules": [
     "Check-in after 4:00 PM",
     "Checkout before 11:00 AM",
     "Pets allowed",

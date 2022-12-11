@@ -1,10 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactStars from "react-rating-stars-component";
 import "./property.scss"
 
-const CommentModal = ({propertyId}) => {
+const CommentModal = ({ propertyId, updateComments }) => {
 
-    const [userComments, setUserComments] = useState({userId:"abc@gmail.com"})
+    const [userComments, setUserComments] = useState({ userName: "abc@gmail.com" })
 
     const ratingChanged = (newRating) => {
         setUserComments({ ...userComments, rating: newRating })
@@ -14,10 +15,26 @@ const CommentModal = ({propertyId}) => {
         setUserComments({ ...userComments, comments: comments })
     };
 
-    const handleClick = () =>{
-        setUserComments({ ...userComments,commentedDate: new Date(),propertyId:propertyId})
+    const handleClick = async () => {
+        let requestBody = {
+            ...userComments, commentedDate: new Date(), propertyId: propertyId
+        }
+        setUserComments({ ...requestBody })
 
-        console.log(userComments)
+        await axios.post(`http://localhost:3000/api/properties/comments/${propertyId}`, requestBody)
+            .then(function (response) {
+                // handle success
+                if (response.status == 200) {
+                    updateComments(requestBody)
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                // always executed
+            });
         //callApi
     }
     return (
@@ -39,13 +56,13 @@ const CommentModal = ({propertyId}) => {
                             />
                         </div>
                         <div className="form-floating">
-                            <textarea className="form-control comments-textarea" placeholder="Leave a comment here" id="floatingTextarea" maxlength="300" onChange={(event)=>onCommentsChange(event.target.value)}></textarea>
+                            <textarea className="form-control comments-textarea" placeholder="Leave a comment here" id="floatingTextarea" maxlength="300" onChange={(event) => onCommentsChange(event.target.value)}></textarea>
                             <label for="floatingTextarea">Enter Comments</label>
                         </div>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={handleClick}>Save changes</button>
+                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={handleClick}>Save changes</button>
                     </div>
                 </div>
             </div>

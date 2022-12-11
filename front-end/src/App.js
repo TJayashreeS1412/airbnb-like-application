@@ -11,23 +11,27 @@ import Property from './components/Property/Property';
 import Reserve from './components/Property/Reserve';
 import ReservePropCard from './components/Property/ReservePropCard';
 import UploadProperty from './components/Property/UploadProperty';
+// import ProfilePage from '../../../AssignmentFinal/front-end/front-end/src/components/profilePage';
 function App() {
   return (
     <>
       {/* <ProfilePage /> */}
       {/* <Greeting /> */}
       <BrowserRouter>
-      <TopMenu />
+        <TopMenu />
         <Routes>
-        <Route path='*' element={<Navigate to="/" />} />
+          <Route path='*' element={<Navigate to="/" />} />
           <Route path="/" element={<HomePage />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Greeting />} />
-          <Route path="property" element={<Property />} />
+          <Route path="/property/:propertyId" element={<Property />} />
           <Route path="reserve" element={<Reserve />} />
           <Route path="reservePropCard" element={<ReservePropCard />} />
           <Route path="uploadProperty" element={<UploadProperty />} />
+          {/* <Route path="profile" element={<ProfilePage />} />
+          <Route path="signUpAsHost" element={<UploadProperty />} />
+          <Route path="editProperty" element={<UploadProperty />} /> */}
         </Routes>
       </BrowserRouter>
       <Footer />

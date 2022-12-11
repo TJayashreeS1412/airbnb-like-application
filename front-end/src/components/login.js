@@ -22,6 +22,7 @@ const Login = () => {
                     console.log(localStorage.getItem("userId"));
                     setEmail("");
                     setPassword("");
+                    sessionStorage.setItem("userId", data[i].userId);
                 }
                 else if(data[i].email == email){
                     isLogin = true;

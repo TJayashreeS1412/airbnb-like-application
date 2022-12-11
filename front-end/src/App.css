@@ -176,8 +176,6 @@ a{
   float: right;
 }
 
-
-
 /* ================================================================================= */
 /* Greetings */
 /* ================================================================================= */
@@ -272,4 +270,326 @@ a{
   justify-content: right;
   align-items: right;
   width: 10%;
+}
+
+/* ================================================================================ */
+/* From Assignment2 */
+/* ================================================================================ */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* ================================================================================= */
+/* TOP MENUBAR */
+/* ================================================================================= */
+
+.menu{
+  /* padding: 5px 5px 5px 0px; */
+  display: flex;
+  height: 80px;
+  background-color:whitesmoke;
+}
+
+.logo{
+  width: 100%;
+  object-fit: cover;
+}
+
+.logoClass{
+  width: 100%;
+  margin: 20px 0px 20px 20px;
+  align-items: left;
+}
+
+@media (min-width: 900px) {
+  .logoClass{
+      width: 20%;
+      margin: 20px 0px 20px 50px;
+      align-items: left;
+  }
+}
+
+@media (min-width: 700px) {
+  .menu{
+      height: 120px;
+  }
+  .logoClass{
+      width: 30%;
+      margin: 20px 0px 20px 50px;
+      align-items: left;
+  }
+}
+
+.dropdown{
+  padding: 20px;
+  width: 80%;
+  text-align: right;
+}
+
+/* ================================================================================= */
+/* JUMBOTRON */
+/* ================================================================================= */
+.jumbotron {
+  /* background-image: url("https://drive.google.com/file/   */
+  background-size: cover;
+}
+
+.searchBox{
+  margin-top: 80px;
+  height: 500px;
+  display: flex;
+  /* background-image: url("../public/Jumbotron.jpg"); */
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .input-seach-parent{
+      width: 70%;
+  } 
+}
+@media (min-width: 900px) {
+  .input-seach-parent{
+      width: 60%;
+  }
+}
+
+.input-seach-parent{
+  padding: 20px;
+  width: 70%;
+}
+
+/* ================================================================================= */
+/* PROPERTIES */
+/* ================================================================================= */
+
+.properties{
+  margin: 20px 0px 0px 0px;
+  display: flex;
+}
+
+.propertyTitle h1{
+  padding: 10px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.properties img{
+  width: 200px;
+  height: 300px;
+}
+
+.properties .cards{
+  width: 70%;
+}
+
+
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.card-metadata{
+  display: flex;
+}
+
+.card-metadata .price{
+  width: 50%;
+  text-align: left;
+}
+
+.card-metadata .rating{
+  text-align: right;
+  width: 50%;
+  justify-content: right;
+}
+
+/* ================================================================================= */
+/* SPECIFIC PROPERTY */
+/* ================================================================================= */
+.titleAndRating{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+.title{
+  width: 50%;
+  text-align: left;
+}
+
+.rating{
+  width: 50%;
+  text-align: right;
+}
+
+.description{
+  font-size: 1.4rem;
+}
+
+.totalCost{
+  display: flex;
+  justify-content: center;
+  line-height: 2;
+}
+
+@media (min-width: 700px) {
+  .onePropBlock{
+    margin: 30px;
+  }
+  
+  .titleAndPhotos{
+    width: 100%;
+  }
+  
+  .totalCost{
+    width: 20%;
+  }
+  
+  .photosAndDesc{
+    display: flex;
+  }
+  
+  .pictures{
+    padding: 20px;
+    width: 50%;
+    justify-items: center;
+  }
+  
+  .description{
+    font-size: 1.4rem;
+    width: 50%;
+  }
+  
+  .nightlyFreeAndRating{
+    display: flex;
+    width: 100%;
+  }
+  
+  .cleaningFee,
+  .totalFee{
+    width: 100%;
+  }
+  
+  .card-body{
+    font-size: 1.1rem;
+  }
+  
+  .card-title{
+    font-size: 1.5rem;
+  }
+  
+  .totalCost{
+    width: 100%;
+  }
+  .totalCost .card{
+    display: flex;
+    justify-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .onePropBlock{
+    margin: 30px;
+    display: flex;
+  }
+  
+  .titleAndPhotos{
+    width: 80%;
+  }
+  
+  .totalCost{
+    width: 20%;
+  }
+  
+  .photosAndDesc{
+    display: flex;
+  }
+  
+  .pictures{
+    width: 50%;
+    justify-items: center;
+  }
+  
+  .description{
+    font-size: 1.4rem;
+    width: 50%;
+  }
+  
+  .nightlyFreeAndRating{
+    display: flex;
+    width: 100%;
+  }
+  
+  .cleaningFee,
+  .totalFee{
+    width: 100%;
+  }
+  
+  .card-body{
+    font-size: 1.1rem;
+  }
+  
+  .card-title{
+    font-size: 1.5rem;
+  }
+  
+  .totalCost .card{
+    height: 300px;
+  }
 }

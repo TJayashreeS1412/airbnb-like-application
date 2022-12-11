@@ -27,7 +27,10 @@ router.post('/', function(req, res){
         email : req.body.email,
         password : req.body.password,
         isHost: req.body.isHost,
-        languagesKnown: req.body.languagesKnown
+        languagesKnown: req.body.languagesKnown,
+        favourites: [],
+        reservations: [],
+        properties:[]
     }, function(err, user){
         if (err) throw err;
         res.json(user);

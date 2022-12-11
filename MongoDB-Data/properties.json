@@ -18,7 +18,7 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/cbe85161-7b80-4969-8043-48b59f15e409.jpeg?im_w=1440"
   ],
   "price": 300,
-  "AverageRatings": 4.75,
+  "avgRating": 4.75,
   "userReview": [
 
     {
@@ -65,7 +65,9 @@ db.properties.insertMany([{
     "Checkout before 11:00 AM",
     "Pets allowed",
     "No smoking"
-  ]
+  ],
+  "reservations": [],
+  "isAvailable" : true
 },
 {
   "propId": 2,
@@ -132,7 +134,9 @@ db.properties.insertMany([{
     "Checkout before 11:00 AM",
     "Pets allowed",
     "No smoking"
-  ]
+  ],
+  "reservations": [],
+  "isAvailable" : true
 },
 {
   "propId": 3,
@@ -152,7 +156,7 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/261bbebb-31da-48dd-9ff1-fb47199c4dd3.jpeg?im_w=1440"
   ],
   "price": 109,
-  "AverageRatings": 4.72,
+  "avgRating": 4.72,
   "userReview": [
 
     {
@@ -199,7 +203,9 @@ db.properties.insertMany([{
     "Checkout before 11:00 AM",
     "Pets allowed",
     "No smoking"
-  ]
+  ],
+  "reservations": [],
+  "isAvailable" : true
 },
 {
   "propId": 4,
@@ -219,7 +225,7 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/5f2affab-67ec-42ab-a116-b165495f35c1.jpeg?im_w=1440"
   ],
   "price": 190,
-  "AverageRatings": 4.83,
+  "avgRating": 4.83,
   "userReview": [
 
     {
@@ -266,7 +272,9 @@ db.properties.insertMany([{
     "Checkout before 11:00 AM",
     "Pets allowed",
     "No smoking"
-  ]
+  ],
+  "reservations": [],
+  "isAvailable" : true
 },
 {
   "propId": 5,
@@ -286,7 +294,7 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/5f2affab-67ec-42ab-a116-b165495f35c1.jpeg?im_w=1440"
   ],
   "price": 190,
-  "AverageRatings": 4.83,
+  "avgRating": 4.83,
   "userReview": [
 
     {
@@ -333,5 +341,7 @@ db.properties.insertMany([{
     "Checkout before 11:00 AM",
     "Pets allowed",
     "No smoking"
-  ]
+  ],
+  "reservations": [],
+  "isAvailable" : true
 }]);

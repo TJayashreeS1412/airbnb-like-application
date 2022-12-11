@@ -6,7 +6,7 @@ var logger = require('morgan');
 const cors = require('cors');
 
 var indexRouter = require('./routes/index');
-var registerRouter = require('./routes/register');
+var UsersRouter = require('./routes/users');
 var propertiesRouter = require('./routes/properties');
 var reservationsRouter = require('./routes/reservations');
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
-app.use('/api/users', registerRouter);
+app.use('/api/users', UsersRouter);
 app.use('/api/properties', propertiesRouter);
 app.use('/api/reservations', reservationsRouter);
 

@@ -16,7 +16,9 @@ const Property = () => {
 
     const { propertyId } = useParams();
 
-
+    const setIsFavourite = (property) => {
+        property.isFavourite = !property.isFavourite;
+    }
 
 
     useEffect(() => {
@@ -109,7 +111,11 @@ const Property = () => {
                     <div className='property d-flex flex-row justify-content-center m-lg-5 m-2 flex-lg-nowrap flex-wrap' style={{ gap: "10px" }}>
                         <div className="col-12 col-lg-6">
                             <span><h1>{property.title}</h1></span>
-                            <div className='mt-3'><span>Hosted by {property.hostName}</span><span className='star-separator'>  * </span> <span>{property.address}</span></div>
+                            <div className='mt-3'>
+                                <span>Hosted by {property.hostName}</span><span className='star-separator'>  * </span> <span>{property.address}</span>
+                                <span className="right" style={{jusitfyContent:"right"}}> {property.isFavourite ? <i className="bi bi-heart-fill" onClick={() => setIsFavourite(property)} /> : <i className="bi bi-heart" onClick={() => setIsFavourite(property)} />}</span>
+                            </div>
+                            
                             <div className='descripton mt-4'>
                                 <div className='mb-2'><b>Description</b></div>
                                 <span>{property.description}</span>
@@ -123,6 +129,24 @@ const Property = () => {
                                 <span className='star-separator'>  * </span>
                                 <span>{property.baths} Baths</span>
                             </div>
+                            <div className='mt-3'>
+                                <div>House Rules: </div>
+                                <ul>
+                                {property.houseRules && property.houseRules.length > 0 && property.houseRules.map((rule, ruleIndex) => {
+                                            return (<li>{rule} </li>)
+                                })}
+                                </ul>
+                            </div>
+                            <div className='mt-3'>
+                                <div>Amenities: </div>
+                                    {property.ameneties.airConditioning && <span className='ms-3'>Air Conditioning</span>}
+                                    {property.ameneties.hairDryer && <span className='ms-3'>Hair Dryer</span>}
+                                    {property.ameneties.hotTub && <span className='ms-3'>Hot Tub</span>}
+                                    {property.ameneties.wifi && <span className='ms-3'>Wifi</span>}
+                                    {property.ameneties.iron && <span className='ms-3'>Iron </span>}
+                                    {property.ameneties.washer && <span className='ms-3'>Washer/ Dryer</span>}
+                            </div>
+                            
                         </div>
                         <div id="carouselExampleIndicators" class="carousel slide w-100 property-carousel m-3 m-lg-0" data-bs-interval="false" style={{ height: "500px" }} >
                             <div class="carousel-indicators">

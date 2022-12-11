@@ -1,7 +1,5 @@
+ db.users.insertMany(
 [{
-  "_id": {
-    "$oid": "6372f733d3dfd1b9181e9ca5"
-  },
   "user_id": 201,
   "first_name": "Kavya",
   "last_name": "Mehra",
@@ -17,9 +15,6 @@
     "Spanish"
   ]
 },{
-  "_id": {
-    "$oid": "6393d816352ecc81e60e9c46"
-  },
   "user_id": 202,
   "first_name": "Kevin",
   "last_name": "Marcus",
@@ -35,9 +30,6 @@
     "Spanish"
   ]
 },{
-  "_id": {
-    "$oid": "6393da9e352ecc81e60e9c4f"
-  },
   "user_id": 203,
   "first_name": "Charles",
   "last_name": "Schen",
@@ -47,8 +39,27 @@
   "favorites": [
     3
   ],
+  "reservations": [],
+  "properties" :[], 
+  "languages_known": [
+    "English",
+    "Spanish"
+  ]
+},{
+  "user_id": 204,
+  "first_name": "Macy",
+  "last_name": "Stevens",
+  "email": "macy@gmail.com",
+  "password": "stevens",
+  "is_host": true,
+  "favorites": [
+    3
+  ],
+  "reservations": [],
+  "properties" :[], 
   "languages_known": [
     "English",
     "Spanish"
   ]
 }]
+);

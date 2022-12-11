@@ -1,4 +1,4 @@
-[{
+db.reservations.insertMany([{
   "_id": {
     "$oid": "6372f519d3dfd1b9181e9ca1"
   },
@@ -16,4 +16,4 @@
   "end_date": "02282023",
   "property_id": 2,
   "user_id": 202
-}]
+}]);

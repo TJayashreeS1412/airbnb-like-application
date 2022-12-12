@@ -1,13 +1,57 @@
 db.reservations.insertMany([{
-  "reservationId": 101,
-  "startDate": "01222023",
-  "endDate": "02262023",
-  "propertyId": 1,
-  "userId": 201
+  "reservationId": 320,
+  "startDate": "2022-12-12T06:00:00.000Z",
+  "endDate": "2022-12-20T06:00:00.000Z",
+  "propId": "1",
+  "userId": "202",
+  "title": "NEW! Stunning Broken Bow Cabin w/ Hot Tub + Views!",
+  "images": [
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/0470dbb6-adea-4c76-8167-b1fd131e6830.jpeg?im_w=1200",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/56966a5f-e2fc-4718-ab07-2b9ad03d006d.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/30bb1786-5eaf-4488-9abe-b29c20f5b5dd.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/d1fdd29d-5818-4a1e-beee-aefe8a6914ef.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/5756a17f-e0d7-49a3-9c7f-e855cd123b08.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/3e145820-8f8e-4dd9-b7b8-bbdd2245fdff.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/fe83006e-17fa-452e-ac3c-2a78158e8061.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/003c3382-5963-478a-86e6-4e9776dc14ab.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/7f2e14ec-b382-4ff3-90bf-8d70c40c17e5.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/b11dca52-ac1b-476b-82e3-4e90c28e32d8.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/cbe85161-7b80-4969-8043-48b59f15e409.jpeg?im_w=1440"
+  ],
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Richardson",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
+  "hostName": "Charles Schen"
 },{
-  "reservationId": 102,
-  "startDate": "02232023",
-  "endDate": "02282023",
-  "propertyId": 2,
-  "userId": 202
+  "reservationId": 1,
+  "startDate": "2022-12-11T06:00:00.000Z",
+  "endDate": "2022-12-19T06:00:00.000Z",
+  "propId": "5",
+  "userId": "202",
+  "title": "Woodsy Abode w/ Covered Deck & Lake Access!",
+  "images": [
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/a0f955a7-793f-4fb0-a5b6-561c30e26b21.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/0e9e3d90-8c57-4682-af1d-1ffaedf9212f.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/ab2b8804-511f-42ac-9107-db214b1f2f80.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/68d01526-5ec2-432a-9aff-e7ab315f2682.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/d6500266-2db3-416b-b0ed-8f940749af55.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/257b30c0-0188-44c0-b889-9534bba4445c.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/965dbd82-de85-4d7c-911b-e8c11bf46d53.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/2f68f082-7527-4d49-a979-632942fd8418.jpeg?im_w=1440",
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/5f2affab-67ec-42ab-a116-b165495f35c1.jpeg?im_w=1440"
+  ],
+  "address": {
+    "street": "3132 Palace Street",
+    "apt": 234,
+    "city": "Austin",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
+  "hostName": "Charles Schen"
 }]);

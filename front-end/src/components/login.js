@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import SuccessfulLogin from './SuccessfulLogin';
-
+import { useNavigate } from "react-router-dom";
+import "./scss/login.scss"
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -22,7 +23,9 @@ const Login = () => {
                     console.log(localStorage.getItem("userId"));
                     setEmail("");
                     setPassword("");
-                    sessionStorage.setItem("userId", data[i].userId);
+                    sessionStorage.setItem("userId", JSON.stringify(data[i].userId));
+                    sessionStorage.setItem("user", JSON.stringify(data[i]));
+                    navigate("/");
                 }
                 else if(data[i].email == email){
                     isLogin = true;
@@ -40,8 +43,8 @@ const Login = () => {
         }
     };
     return(
-        <div class="loginFormBlock">
-            <form class="loginForm m-3 m-lg-5" onSubmit={handleLogin}>
+        <div class="loginFormBlock app-body d-flex justify-content-center">
+            <form class="loginForm w-100 m-4 m-lg-0 d-flex justify-content-center flex-column" onSubmit={handleLogin}>
                 <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input 
@@ -63,7 +66,7 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)} 
                     />
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary custom-button login-button mt-3">Login</button>
             </form>
         </div>
     );

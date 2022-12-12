@@ -17,7 +17,11 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/b11dca52-ac1b-476b-82e3-4e90c28e32d8.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-635796702565692921/original/cbe85161-7b80-4969-8043-48b59f15e409.jpeg?im_w=1440"
   ],
-  "price": 300,
+  "price": {
+    "base_fee": 120,
+    "cleaning_fee": 20,
+    "taxes": 10
+  },
   "avgRating": 4.75,
   "userReview": [
 
@@ -51,7 +55,14 @@ db.properties.insertMany([{
   "bedrooms": 3,
   "beds": 6,
   "baths": 3,
-  "address": "Broken Bow, Oklahoma, United States",
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Richardson",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
   "ameneties": {
     "airConditioning": true,
     "hairDryer": true,
@@ -66,7 +77,6 @@ db.properties.insertMany([{
     "Pets allowed",
     "No smoking"
   ],
-  "reservations": [],
   "isAvailable" : true
 },
 {
@@ -86,7 +96,11 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/630de629-14c8-4598-8c62-48869f321282.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/261bbebb-31da-48dd-9ff1-fb47199c4dd3.jpeg?im_w=1440"
   ],
-  "price": 109,
+  "price": {
+    "base_fee": 250,
+    "cleaning_fee": 20,
+    "taxes": 10
+  },
   "avgRating": 4.72,
   "userReview": [
 
@@ -120,7 +134,14 @@ db.properties.insertMany([{
   "bedrooms": 2,
   "beds": 3,
   "baths": 2,
-  "address": "Murphy, North Carolina, United States",
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Murphy",
+    "state": "NC",
+    "zipcode": 75080,
+    "country": "USA"
+  },
   "ameneties": {
     "airConditioning": true,
     "hairDryer": true,
@@ -135,7 +156,6 @@ db.properties.insertMany([{
     "Pets allowed",
     "No smoking"
   ],
-  "reservations": [],
   "isAvailable" : true
 },
 {
@@ -155,7 +175,11 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/630de629-14c8-4598-8c62-48869f321282.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51342807/original/261bbebb-31da-48dd-9ff1-fb47199c4dd3.jpeg?im_w=1440"
   ],
-  "price": 109,
+  "price": {
+    "base_fee": 200,
+    "cleaning_fee": 20,
+    "taxes": 10
+  },
   "avgRating": 4.72,
   "userReview": [
 
@@ -189,7 +213,14 @@ db.properties.insertMany([{
   "bedrooms": 2,
   "beds": 3,
   "baths": 2,
-  "address": "Murphy, North Carolina, United States",
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Richardson",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
   "ameneties": {
     "airConditioning": true,
     "hairDryer": true,
@@ -204,7 +235,6 @@ db.properties.insertMany([{
     "Pets allowed",
     "No smoking"
   ],
-  "reservations": [],
   "isAvailable" : true
 },
 {
@@ -224,7 +254,11 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/2f68f082-7527-4d49-a979-632942fd8418.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/5f2affab-67ec-42ab-a116-b165495f35c1.jpeg?im_w=1440"
   ],
-  "price": 190,
+  "price": {
+    "base_fee": 200,
+    "cleaning_fee": 20,
+    "taxes": 10
+  },
   "avgRating": 4.83,
   "userReview": [
 
@@ -258,7 +292,14 @@ db.properties.insertMany([{
   "bedrooms": 3,
   "beds": 5,
   "baths": 2.5,
-  "address": "Coldspring, Texas, United States",
+  "address": {
+    "street": "3100 Northside Blvd",
+    "apt": 234,
+    "city": "Coldspring",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
   "ameneties": {
     "airConditioning": true,
     "hairDryer": true,
@@ -273,7 +314,6 @@ db.properties.insertMany([{
     "Pets allowed",
     "No smoking"
   ],
-  "reservations": [],
   "isAvailable" : true
 },
 {
@@ -293,7 +333,11 @@ db.properties.insertMany([{
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/2f68f082-7527-4d49-a979-632942fd8418.jpeg?im_w=1440",
       "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50064888/original/5f2affab-67ec-42ab-a116-b165495f35c1.jpeg?im_w=1440"
   ],
-  "price": 190,
+  "price": {
+    "base_fee": 109,
+    "cleaning_fee": 20,
+    "taxes": 10
+  },
   "avgRating": 4.83,
   "userReview": [
 
@@ -327,7 +371,14 @@ db.properties.insertMany([{
   "bedrooms": 3,
   "beds": 5,
   "baths": 2.5,
-  "address": "Coldspring, Texas, United States",
+  "address": {
+    "street": "3132 Palace Street",
+    "apt": 234,
+    "city": "Austin",
+    "state": "TX",
+    "zipcode": 75080,
+    "country": "USA"
+  },
   "ameneties": {
     "airConditioning": true,
     "hairDryer": true,
@@ -342,6 +393,5 @@ db.properties.insertMany([{
     "Pets allowed",
     "No smoking"
   ],
-  "reservations": [],
   "isAvailable" : true
 }]);

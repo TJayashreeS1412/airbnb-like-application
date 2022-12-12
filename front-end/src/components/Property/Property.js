@@ -68,9 +68,9 @@ const Property = () => {
 
 
     const getBookingPrice = () => {
-        let bookingPrice = property.price;
+        let bookingPrice = property.price.base_fee;
         if (guestsCount >= 1) {
-            bookingPrice = Math.ceil(guestsCount / 2) * property.price * selectedDatesCount
+            bookingPrice = Math.ceil(guestsCount / 2) * property.price.base_fee * selectedDatesCount
         }
         return bookingPrice;
     }
@@ -84,7 +84,8 @@ const Property = () => {
 
     const handleClick = async () => {
         let requestBody = {
-            startDate: reservationDates.startDate, endDate: reservationDates.endDate, propertyId: propertyId, userId: sessionStorage.getItem("userId"),
+            startDate: reservationDates.startDate, endDate: reservationDates.endDate, propId: propertyId, userId: sessionStorage.getItem("userId"),
+            title: property.title, images: property.images, address: property.address, hostName: property.hostName
         }
 
         await axios.post(`http://localhost:3000/api/reservations/`, requestBody)
@@ -95,8 +96,10 @@ const Property = () => {
                 }
             })
             .catch(function (error) {
+                console.log(error)
+                let { response } = error
                 // handle error
-                console.log(error);
+                alert(`\n\n${response.status}:${response.statusText}\n\n${response.data.message}`);
             })
             .finally(function () {
                 // always executed
@@ -105,17 +108,17 @@ const Property = () => {
     }
 
     return (
-        <>
+        <div  className='app-body'>
             {property.propId &&
                 <div>
                     <div className='property d-flex flex-row justify-content-center m-lg-5 m-2 flex-lg-nowrap flex-wrap' style={{ gap: "10px" }}>
                         <div className="col-12 col-lg-6">
                             <span><h1>{property.title}</h1></span>
                             <div className='mt-3'>
-                                <span>Hosted by {property.hostName}</span><span className='star-separator'>  * </span> <span>{property.address}</span>
-                                <span className="right" style={{jusitfyContent:"right"}}> {property.isFavourite ? <i className="bi bi-heart-fill" onClick={() => setIsFavourite(property)} /> : <i className="bi bi-heart" onClick={() => setIsFavourite(property)} />}</span>
+                                <span>Hosted by {property.hostName}</span><span className='star-separator'>  * </span> <span>{property.address.street}, {property.address.city}, {property.address.state}, {property.address.zip}</span>
+                                <span className="right" style={{ jusitfyContent: "right" }}> {property.isFavourite ? <i className="bi bi-heart-fill" onClick={() => setIsFavourite(property)} /> : <i className="bi bi-heart" onClick={() => setIsFavourite(property)} />}</span>
                             </div>
-                            
+
                             <div className='descripton mt-4'>
                                 <div className='mb-2'><b>Description</b></div>
                                 <span>{property.description}</span>
@@ -132,21 +135,21 @@ const Property = () => {
                             <div className='mt-3'>
                                 <div>House Rules: </div>
                                 <ul>
-                                {property.houseRules && property.houseRules.length > 0 && property.houseRules.map((rule, ruleIndex) => {
-                                            return (<li>{rule} </li>)
-                                })}
+                                    {property.houseRules && property.houseRules.length > 0 && property.houseRules.map((rule, ruleIndex) => {
+                                        return (<li>{rule} </li>)
+                                    })}
                                 </ul>
                             </div>
                             <div className='mt-3'>
                                 <div>Amenities: </div>
-                                    {property.ameneties.airConditioning && <span className='ms-3'>Air Conditioning</span>}
-                                    {property.ameneties.hairDryer && <span className='ms-3'>Hair Dryer</span>}
-                                    {property.ameneties.hotTub && <span className='ms-3'>Hot Tub</span>}
-                                    {property.ameneties.wifi && <span className='ms-3'>Wifi</span>}
-                                    {property.ameneties.iron && <span className='ms-3'>Iron </span>}
-                                    {property.ameneties.washer && <span className='ms-3'>Washer/ Dryer</span>}
+                                {property.ameneties.airConditioning && <span className='ms-3'>Air Conditioning</span>}
+                                {property.ameneties.hairDryer && <span className='ms-3'>Hair Dryer</span>}
+                                {property.ameneties.hotTub && <span className='ms-3'>Hot Tub</span>}
+                                {property.ameneties.wifi && <span className='ms-3'>Wifi</span>}
+                                {property.ameneties.iron && <span className='ms-3'>Iron </span>}
+                                {property.ameneties.washer && <span className='ms-3'>Washer/ Dryer</span>}
                             </div>
-                            
+
                         </div>
                         <div id="carouselExampleIndicators" class="carousel slide w-100 property-carousel m-3 m-lg-0" data-bs-interval="false" style={{ height: "500px" }} >
                             <div class="carousel-indicators">
@@ -176,7 +179,7 @@ const Property = () => {
                         </div>
                     </div>
                     <hr className='m-lg-5 m-2' />
-                    <div className='d-flex flex-row justify-content-between ms-md-5 me-md-5'>
+                    <div className='d-flex flex-row justify-content-center justify-content-md-between flex-wrap flex-md-nowrap ms-md-5 me-md-5'>
                         <div className='d-flex flex-column align-items-center align-items-md-start  '>
                             <div className="pb-3">
                                 <span>{selectedDatesCount}</span> nights in  {property.title}
@@ -188,9 +191,9 @@ const Property = () => {
                                 />
                             </div>
                         </div>
-                        <div class="card property-reservation-card">
+                        <div class="card property-reservation-card mt-md-0 mt-4">
                             <div class="card-body d-flex flex-column">
-                                <b>{property.price} / night </b>
+                                <b>{property.price.base_fee} / night </b>
                                 <hr />
                                 <div className='d-flex flex-row justify-content-between'>
                                     <div className='mt-2'>
@@ -213,7 +216,7 @@ const Property = () => {
                                 <div className='d-flex flex-row justify-content-between '>
                                     <div className='mt-2'>
                                         <div className='mb-2 fs-6'><b>Total Price</b></div>
-                                        <span>{property.price} * {selectedDatesCount} night(s) * {Math.ceil(guestsCount / 2)} room(s) = {getBookingPrice()}</span>
+                                        <span>{property.price.base_fee} * {selectedDatesCount} night(s) * {Math.ceil(guestsCount / 2)} room(s) = {getBookingPrice()}</span>
                                     </div>
 
                                 </div>
@@ -270,7 +273,7 @@ const Property = () => {
                     <CommentModal propertyId={property.propId} updateComments={updateComments.bind(this)} />
                 </div>
             }
-        </>
+        </div>
     );
 }
 export default Property;

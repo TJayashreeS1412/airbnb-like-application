@@ -51,10 +51,6 @@ a{
   background-color:whitesmoke;
 }
 
-.logo{
-  width: 100%;
-  object-fit: cover;
-}
 
 .logoClass{
   width: 100%;
@@ -91,14 +87,14 @@ a{
 /* Login */
 /* ================================================================================= */
 .loginFormBlock{
-  display: flex;
+  /* display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .loginForm{
-  padding: 20px 0px 20px 0px;
-  width: 20%;
+  /* padding: 20px 0px 20px 0px;
+  width: 20%; */
 }
 
 /* ================================================================================= */
@@ -334,11 +330,6 @@ a{
   background-color:whitesmoke;
 }
 
-.logo{
-  width: 100%;
-  object-fit: cover;
-}
-
 .logoClass{
   width: 100%;
   margin: 20px 0px 20px 20px;
@@ -379,7 +370,6 @@ a{
 }
 
 .searchBox{
-  margin-top: 80px;
   height: 500px;
   display: flex;
   /* background-image: url("../public/Jumbotron.jpg"); */
@@ -424,9 +414,6 @@ a{
   height: 300px;
 }
 
-.properties .cards{
-  width: 70%;
-}
 
 
 @media (min-width: 600px) {

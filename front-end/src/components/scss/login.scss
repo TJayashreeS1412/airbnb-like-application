@@ -1,0 +1,15 @@
+@media (min-width:768px) {
+    .loginForm{
+        width: 50% !important;
+    }
+}
+
+@media (min-width:992px) {
+    .loginForm{
+        width: 30% !important;
+    }
+}
+
+.login-button{
+    text-align: center;
+}

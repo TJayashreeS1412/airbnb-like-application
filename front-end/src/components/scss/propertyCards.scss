@@ -1,0 +1,33 @@
+.favourite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10000;
+    color: #464456;
+    -webkit-text-stroke: 0.5px;
+    font-size: 13px;
+    border: 3px solid white;
+    background-color: white;
+    padding: 5px;
+    border-radius: 30px;
+    width: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+
+    &:hover {
+        .bi {
+            color: #fd5c63
+        }
+    }
+
+    .bi {
+        color: #464456;
+        &.selected {
+            color: #fd5c63 !important;
+        }
+    }
+
+    
+}

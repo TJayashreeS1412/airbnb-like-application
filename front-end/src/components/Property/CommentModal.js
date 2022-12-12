@@ -17,7 +17,7 @@ const CommentModal = ({ propertyId, updateComments }) => {
 
     const handleClick = async () => {
         let requestBody = {
-            ...userComments, commentedDate: new Date(), propertyId: propertyId
+            ...userComments, commentedDate: new Date(), propertyId: propertyId, userName: sessionStorage.getItem("userName")
         }
         setUserComments({ ...requestBody })
 

@@ -4,6 +4,7 @@ var router = express.Router();
 var monk = require("monk");
 var db = monk("localhost:27017/swayaway");
 var collection = db.get("properties");
+var userCollection = db.get('users');
 
 router.get("/", function (req, res) {
   collection.find({}, function (err, properties) {
@@ -13,13 +14,10 @@ router.get("/", function (req, res) {
 });
 
 router.get("/property", function (req, res) {
-  collection.findOne(
-    { propId: Number(req.query.propId) },
+  collection.findOne({ propId: Number(req.query.propId) },
     function (err, property) {
       if (err) throw err;
       res.send(property);
-      // res.render('index',{tile: property});
-      // res.json(property);
     }
   );
 });
@@ -47,6 +45,7 @@ router.put("/:propId", function (req, res) {
     function (err, property) {
       if (err) throw err;
       // if update is successfull, it will return updated object
+      
       res.json(property);
     }
   );
@@ -80,9 +79,10 @@ router.post("/comments/:propId", async function (req, res) {
 
 router.post("/", function (req, res) {
   //req.body is used to read form input
+  if(req.body.hostId && req.body.title){
   collection.insert(
     {
-      propId: req.body.propId,
+      propId: Math.floor(Math.random() * 1000) + 1,
       hostId: req.body.userId,
       title: req.body.title,
       description: req.body.description,
@@ -107,9 +107,10 @@ router.post("/", function (req, res) {
       res.json(property);
     }
   );
+  }
 });
 
-router.put("/:id", function (req, res) { //softDelete
+router.delete("/:id", function (req, res) { //softDelete
   collection.update(
     { propId: Number(req.query.propId) },
     {

@@ -60,7 +60,6 @@ const EditProperty = (props) => {
                 hostId: sessionStorage.getItem("userId"),
                 title: title,
                 description: desc,
-                images: imageFile,
                 price: {
                     base_fee: nightlyFee,
                     cleaning_fee: cleaningFee,

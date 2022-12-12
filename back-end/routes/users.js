@@ -80,7 +80,7 @@ router.post('/addfavourites', async function(req, res){
             { userId: Number(req.body.userId) },
             {
             $set: {
-                favorites: user.favorites.concat(req.body.propId), // add property to list
+                favorites: user.favorites.includes(req.body.propId)? user.favorites : user.favorites.concat(req.body.propId), // add property to list
             },
             },
             function (err, user) {

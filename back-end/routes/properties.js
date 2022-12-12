@@ -31,7 +31,6 @@ router.put("/:propId", function (req, res) {
       $set: {
         title: req.body.title,
         description: req.body.description,
-        images: req.body.images,
         price: req.body.price,
         houseType: req.body.houseType,
         maxGuests: req.body.maxGuests,

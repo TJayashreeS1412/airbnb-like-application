@@ -1,54 +1,60 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import "./scss/propertyCards.scss";
 const PropertyCards = ({ properties, filterProperties }) => {
   const navigate = useNavigate();
   const setIsFavourite = (selectedCard) => {
     console.log(selectedCard);
-    let updatedProperties = properties.map(card => {
-        let requestBody = {
-            userId: sessionStorage.getItem("userId"), propId: selectedCard.propId
+    let updatedProperties = properties.map((card) => {
+      let requestBody = {
+        userId: sessionStorage.getItem("userId"),
+        propId: selectedCard.propId,
+      };
+      if (card.title === selectedCard.title) {
+        if (card.isFavourite) {
+          axios
+            .post(
+              "http://localhost:3000/api/users/removefavourites",
+              requestBody
+            )
+            .then(function (response) {
+              // handle success
+              if (response.status == 200) {
+                card.isFavourite = false;
+              }
+              window.location.reload(false);
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+            .finally(function () {
+              // always executed
+            });
+        } else {
+          axios
+            .post("http://localhost:3000/api/users/addfavourites", requestBody)
+            .then(function (response) {
+              // handle success
+              if (response.status == 200) {
+                card.isFavourite = true;
+              }
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+            .finally(function () {
+              // always executed
+            });
         }
-        if (card.title === selectedCard.title) {
-            if (card.isFavourite) {
-                axios.post('http://localhost:3000/api/users/removefavourites', requestBody)
-                .then(function (response) {
-                    // handle success
-                    if (response.status == 200) {
-                        card.isFavourite = false
-                    }
-                    window.location.reload(false);
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
-                .finally(function () {
-                    // always executed
-                });
-            } else {
-                axios.post('http://localhost:3000/api/users/addfavourites', requestBody)
-                .then(function (response) {
-                    // handle success
-                    if (response.status == 200) {
-                        card.isFavourite = true
-                    }
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
-                .finally(function () {
-                    // always executed
-                });
-            }
-        }
-        return card
-    })
+      }
+      return card;
+    });
 
-    properties = updatedProperties
-}
+    properties = updatedProperties;
+  };
   return (
     <>
       <div className="properties">
@@ -104,7 +110,7 @@ const PropertyCards = ({ properties, filterProperties }) => {
                             </div>
                           );
                         })}
-                        
+
                       <span className="favourite">
                         {property.isFavourite ? (
                           <i
@@ -151,9 +157,15 @@ const PropertyCards = ({ properties, filterProperties }) => {
                   >
                     <div className="card-title ">
                       <h5 className="">{property.title}</h5>
+                      
                     </div>
+                    <div>
+                        {property.address.city}, {property.address.state}
+                      </div>
                     <div className="card-metadata">
-                      <p className="left">${property.price.base_fee} per night</p>
+                      <p className="left">
+                        ${property.price.base_fee} per night
+                      </p>
                       <p className="right">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +180,6 @@ const PropertyCards = ({ properties, filterProperties }) => {
                         {property.avgRating}
                       </p>
                     </div>
-                    
                   </div>
                 </div>
               );

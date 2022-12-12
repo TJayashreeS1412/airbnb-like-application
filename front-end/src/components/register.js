@@ -25,13 +25,13 @@ const Register = () => {
                 firstNameBox.style.borderColor = "red";
                 alert('First name cannot be empty!');   
             }
-            if (lastName.length == 0){
+            else if (lastName.length == 0){
                 lastNameBox.style.borderColor = "red";
                 alert('Last name cannot be empty!');
             }
-            if (email.length == 0){
+            else if (email.length == 0){
                 emailBox.style.borderColor = "red";
-                alert('Email cannot be empty!');
+                throw new Error('Email cannot be empty!');
             }
             console.log(getData);
             // Check if the email address already exists
@@ -39,7 +39,7 @@ const Register = () => {
                 
                 if (getData[i].email == email){
                     emailBox.style.borderColor = "red";
-                    alert('Email already exists!');
+                    throw new Error('Email already exists!');
                 }
             }
 
@@ -48,7 +48,7 @@ const Register = () => {
             if (password.length < 8){
                 passwordBox.style.borderColor = "red";
                 passwordFlag = true;
-                alert('Password should be atleast 8 characters long!');
+                throw new Error('Password should be atleast 8 characters long!');
             }
 
             // Proceeding toward POST request
@@ -72,8 +72,8 @@ const Register = () => {
                 setLastName("");
                 setEmail("");
                 setPassword("");
-                alert("User successfully registered!");
-                window.location.href="/login";
+                alert("User successfully registered!")
+                window.location.href="/login"
             }
             else{
                 alert("Registration failed!");

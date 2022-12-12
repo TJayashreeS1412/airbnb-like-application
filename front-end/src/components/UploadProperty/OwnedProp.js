@@ -4,14 +4,18 @@ import axios from 'axios';
 import "../scss/propertyCards.scss";
 const OwnedProp = ({ properties, filterProperties }) => {
   const navigate = useNavigate();
-  
+
+  const editProperty = async (property) => {
+    await sessionStorage.setItem("editProperty", JSON.stringify(property))
+    navigate("/editProperty")
+  }
   return (
     <>
       <div className="properties">
         <div className="cards">
           {properties &&
             properties.length > 0 &&
-            properties.map((property, index) => {
+            properties.filter(item=>item.isAvailable).map((property, index) => {
               return (
                 <div className="card mb-3">
                   <div
@@ -44,12 +48,11 @@ const OwnedProp = ({ properties, filterProperties }) => {
                     <div className="carousel-inner" style={{ width: "100%" }}>
                       {property.images &&
                         property.images.length > 0 &&
-                        property.images.map((image, imageIndex) => {
+                        property.images?.map((image, imageIndex) => {
                           return (
                             <div
-                              className={`carousel-item ${
-                                imageIndex == 0 ? `active` : ``
-                              }`}
+                              className={`carousel-item ${imageIndex == 0 ? `active` : ``
+                                }`}
                               key={image}
                             >
                               <img
@@ -60,10 +63,9 @@ const OwnedProp = ({ properties, filterProperties }) => {
                             </div>
                           );
                         })}
-                        
+
                       <span className="favourite">
-                        <i class="bi bi-pencil-square" onClick={()=>navigate("/uploadProperty")}></i>
-                        
+                        <i class="bi bi-pencil-square" onClick={() => editProperty(property)}></i>
                       </span>
                       <button
                         className="carousel-control-prev"
@@ -115,7 +117,7 @@ const OwnedProp = ({ properties, filterProperties }) => {
                         {property.AverageRatings}
                       </p>
                     </div>
-                    
+
                   </div>
                 </div>
               );

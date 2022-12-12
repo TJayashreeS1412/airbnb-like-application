@@ -24,46 +24,47 @@ router.get('/user', function(req, res) {
 router.post('/', function(req, res){
     collection.insert({
         userId: Math.floor(Math.random() * 1000) + 1,
-        firstName : req.body.first_name,
+        firstName : req.body.firstName,
         lastName : req.body.lastName,
         email : req.body.email,
         password : req.body.password,
-        isHost: req.body.isHost,
-        languagesKnown: req.body.languagesKnown,
-        favourites: [],
-        reservations: [],
-        properties:[]
+        isHost: false,
+        languagesKnown: ["English"],
+        favorites: [],
     }, function(err, user){
         if (err) throw err;
         res.json(user);
     });
 });
 
-router.get('/favourites', function(req, res) {
-    var allProperties, listOfFavProps = [];
-    propCollection.find({}, function (err, properties) {
+router.get('/favourites', async function (req, res) {
+    await propCollection.find({}, function (err, properties) {
         if (err) throw err;
-        allProperties =properties;
-      });
+        let allProperties, listOfFavProps = [];
 
-	collection.findOne({ userId: Number(req.query.userId) }, function(err, user){
-		if (err) throw err;
-        if (user?.favorites && allProperties){
-            for(i=0; i<allProperties.length; i++){
-                for(j=0; j<user.favorites.length; j++){
-                    if (allProperties[i].propId == user.favorites[j]){
-                        listOfFavProps = listOfFavProps.concat(allProperties[i]);
+        allProperties = properties;
+
+        collection.findOne({ userId: Number(req.query.userId) }, function (err, user) {
+            if (err) throw err;
+            if (user?.favorites && allProperties) {
+                for (i = 0; i < allProperties.length; i++) {
+                    for (j = 0; j < user.favorites.length; j++) {
+                        if (allProperties[i].propId == user.favorites[j]) {
+                            listOfFavProps = listOfFavProps.concat(allProperties[i]);
+                        }
                     }
                 }
             }
-        }
-        res.json(listOfFavProps);
-	});
+            res.json(listOfFavProps);
+        });
+    });
+
+
 });
 
 router.get('/hostProperties', function(req, res) {
     console.log(req.query.userId);
-    propCollection.find({hostId: Number(req.query.userId)}, function (err, properties) {
+    propCollection.find({hostId: req.query.userId}, function (err, properties) {
         if (err) throw err;
         res.json(properties);
       });
@@ -92,27 +93,27 @@ router.post('/addfavourites', async function(req, res){
     );
 });
 
-router.post('/removefavourites', async function(req, res){
+router.post('/removefavourites', async function (req, res) {
     await collection.findOne(
-        { userId: Number(req.body.userId) },
+        { userId: parseInt(req.body.userId) },
         async function (err, user) {
-        if (err) throw err;
-
-        await collection.update(
-            { userId: Number(req.body.userId) },
-            {
-            $set: {
-                favorites: user.favorites.filter(function(item) {
-					return item.propId !== Number(req.body.propId)
-				}),
-            },
-            },
-            function (err, user) {
             if (err) throw err;
-            // if update is successfull, it will return updated object
-            res.json(user);
-            }
-        );
+          
+            await collection.update(
+                { userId: parseInt(req.body.userId) },
+                {
+                    $set: {
+                        favorites: user.favorites.filter(function (propId) {
+                            return propId !== parseInt(req.body.propId)
+                        }),
+                    },
+                },
+                function (err, userr) {
+                    if (err) throw err;
+                    // if update is successfull, it will return updated object
+                    res.json(userr);
+                }
+            );
         }
     );
 });

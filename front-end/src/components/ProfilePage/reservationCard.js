@@ -35,10 +35,26 @@ const ReservationCard = () => {
       });
   }, []);
 
-  const checkforCancellation = () => {
-    var date = new Date();
-    console.log(date);
-  }
+  const checkforCancellation = (reservation) => {
+    const date = new Date();
+    console.log("previopus date:",date);
+    const newDate = new Date(date.setDate(date.getDate() + 2)); //48 hours
+    const reservationDate = new Date(reservation.startDate)
+    console.log(newDate , reservationDate); 
+    if (newDate.getTime() <= reservationDate.getTime()) {
+      // cancel
+      axios
+        .delete(
+          "http://localhost:3000/api/reservations?reservationId=" +
+            reservation.reservationId
+        )
+        .then(() => {
+          alert("Successfully Cancelled!!");
+        });
+    } else {
+      alert("You cannot cancel reservation within 48 hours!");
+    }
+  };
 
   return (
     <>
@@ -129,7 +145,10 @@ const ReservationCard = () => {
                     <div className="card-title ">
                       <h5 className="">{reservation.title}</h5>
                     </div>
-                    <span>{reservation.address.street}, {reservation.address.city}, {reservation.address.state}, </span>
+                    <span>
+                      {reservation.address.street}, {reservation.address.city},{" "}
+                      {reservation.address.state},{" "}
+                    </span>
                     <div className="d-flex flex-col justify-content-between">
                       <div className="mt-2">
                         <div className="mb-2 fs-6">
@@ -145,7 +164,13 @@ const ReservationCard = () => {
                       </div>
                     </div>
                   </div>
-                  <button type="button" className="btn btn-primary m-3" onClick={checkforCancellation()}>Cancel Reservation</button>
+                  <button
+                    type="button"
+                    className="btn btn-primary m-3"
+                    onClick={() => checkforCancellation(reservation)}
+                  >
+                    Cancel Reservation
+                  </button>
                 </div>
               );
             })}

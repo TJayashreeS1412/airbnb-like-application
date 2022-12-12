@@ -8,6 +8,7 @@ import HomePage from './components/Home/HomePage';
 import Property from './components/Property/Property';
 import UploadProperty from './components/UploadProperty/UploadProperty';
 import ProfilePage from './components/ProfilePage/profilePage';
+import EditProperty from './components/UploadProperty/EditProperty';
 function App() {
   return (
     <>
@@ -21,6 +22,8 @@ function App() {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="property/:propertyId" element={<Property />} />
           <Route path="uploadProperty" element={<UploadProperty />} />
+          <Route path="editProperty" element={<EditProperty />} />
+
           {/* <Route path="profile" element={<ProfilePage />} />
           <Route path="signUpAsHost" element={<UploadProperty />} />
           <Route path="editProperty" element={<UploadProperty />} /> */}

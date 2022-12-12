@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-
+import "./scss/register.scss"
 const Register = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -23,15 +23,15 @@ const Register = () => {
 
             if (firstName.length == 0){
                 firstNameBox.style.borderColor = "red";
-                throw new Error('First name cannot be empty!');   
+                alert('First name cannot be empty!');   
             }
             if (lastName.length == 0){
                 lastNameBox.style.borderColor = "red";
-                throw new Error('Last name cannot be empty!');
+                alert('Last name cannot be empty!');
             }
             if (email.length == 0){
                 emailBox.style.borderColor = "red";
-                throw new Error('Email cannot be empty!');
+                alert('Email cannot be empty!');
             }
             console.log(getData);
             // Check if the email address already exists
@@ -39,7 +39,7 @@ const Register = () => {
                 
                 if (getData[i].email == email){
                     emailBox.style.borderColor = "red";
-                    throw new Error('Email already exists!');
+                    alert('Email already exists!');
                 }
             }
 
@@ -48,7 +48,7 @@ const Register = () => {
             if (password.length < 8){
                 passwordBox.style.borderColor = "red";
                 passwordFlag = true;
-                throw new Error('Password should be atleast 8 characters long!');
+                alert('Password should be atleast 8 characters long!');
             }
 
             // Proceeding toward POST request
@@ -72,10 +72,11 @@ const Register = () => {
                 setLastName("");
                 setEmail("");
                 setPassword("");
-                console.log("User successfully registered!")
+                alert("User successfully registered!");
+                window.location.href="/login";
             }
             else{
-                console.log("Registration failed!");
+                alert("Registration failed!");
             }
         }
         catch(err){
@@ -83,8 +84,8 @@ const Register = () => {
         }
     };
     return(
-        <div class="registerFormBlock">
-            <form class="registerForm" onSubmit={handleRegistration}>
+        <div class="registerFormBlock app-body d-flex justify-content-center">
+            <form class="registerForm  w-100 m-4 m-lg-0 d-flex justify-content-center flex-column" onSubmit={handleRegistration}>
                 <div class="mb-3">
                     <label class="form-label">First Name</label>
                     <input type="text" 
@@ -114,7 +115,7 @@ const Register = () => {
                     onChange={(e) => setPassword(e.target.value)} />
                     {passwordFlag && <p class="error" >Password should be atleast 8 characters long! //make this red color</p>}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
             </form>
         </div>
     );

@@ -29,7 +29,8 @@ const UploadProperty = (props) => {
       const hairdryer = document.getElementById("hairdryer").checked;
       const pet_friendly = document.getElementById("pet_friendly").checked;
 
-      const imageFile = document.getElementById("formFile").value;
+      var imageFile = [];
+      imageFile.push(document.getElementById("formFile").value);
       console.log(imageFile);
 
       const nightlyFee = parseInt(

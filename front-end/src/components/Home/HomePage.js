@@ -1,12 +1,12 @@
 import React from 'react';
 import SearchComponent from './Search';
 import "./HomePage.scss"
-import PropertyCards from './Card';
+import HomeProperties from './HomeProperties';
 const HomePage = () => {
     return (
         <div  className='app-body'>
             <SearchComponent />
-            <PropertyCards />
+            <HomeProperties />
         </div>
 
     );

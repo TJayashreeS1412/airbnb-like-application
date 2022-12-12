@@ -19,21 +19,19 @@ const Login = () => {
                 if (data[i].email == email && data[i].password == password){
                     isLogin = true;
                     console.log("User successfully logged in!");
-                    localStorage.setItem("userId", email);
-                    console.log(localStorage.getItem("userId"));
                     setEmail("");
                     setPassword("");
                     sessionStorage.setItem("userId", JSON.stringify(data[i].userId));
                     sessionStorage.setItem("user", JSON.stringify(data[i]));
-                    navigate("/");
+                    window.location.href="/"
                 }
                 else if(data[i].email == email){
                     isLogin = true;
-                    console.log("Incorrect password");
+                    alert("Incorrect password");
                 }
             }
             if (isLogin == false){
-                console.log("No user found!");
+                alert("No user found!");
                 setEmail("");
                 setPassword("");
             }

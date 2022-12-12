@@ -1,17 +1,17 @@
+.registerFormBlock{
+    margin-top: 150px !important;
+    margin-bottom: 150px !important;
+
+}
+
 @media (min-width:768px) {
-    .loginForm{
+    .registerForm{
         width: 50% !important;
     }
 }
 
 @media (min-width:992px) {
-    .loginForm{
+    .registerForm{
         width: 30% !important;
     }
-}
-
-.loginFormBlock{
-    margin-top: 150px !important;
-    margin-bottom: 150px !important;
-
 }

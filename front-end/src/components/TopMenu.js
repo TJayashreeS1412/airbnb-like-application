@@ -28,18 +28,18 @@ const TopMenu = () => {
         fetchUserName()
     }, [])
 
-    useEffect(()=>{
-        {console.log("session",sessionStorage.getItem("userId"))}
+    useEffect(() => {
+        { console.log("session", sessionStorage.getItem("userId")) }
         setUserId(sessionStorage.getItem("userId"))
-    },[])
+    }, [])
 
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         localStorage.clear();
         sessionStorage.clear();
     }
 
     return (
-        <Navbar bg="light" expand="lg" className='ps-4 pe-4 top-menu'>
+        <Navbar bg="light" expand="lg" className='ps-4 pe-4 top-menu '>
             <Container fluid>
                 <Navbar.Brand href="/">
                     <img class="logo" src="/logo.svg" alt="logo" width="150" />
@@ -54,11 +54,11 @@ const TopMenu = () => {
                             </Nav.Link>
                         }
                         {
-                            userId &&  <Nav.Link eventKey={2} as={Link} to="/profile">
-                            Profile
+                            userId && <Nav.Link eventKey={2} as={Link} to="/profile">
+                                Profile
                             </Nav.Link>
                         }
-                       
+
                         {
                             !userId &&
                             <Nav.Link eventKey={2} as={Link} to="/register">
@@ -66,11 +66,11 @@ const TopMenu = () => {
                             </Nav.Link>
                         }
                         {
-                             userId && <Nav.Link eventKey={2} as={Link} to="/login" onClick={handleSignOut}>
-                             Signout
-                         </Nav.Link>
+                            userId && <Navbar.Text onClick={handleSignOut}>
+                                <a href="/login"> Signout </a>
+                            </Navbar.Text>
                         }
-                        
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

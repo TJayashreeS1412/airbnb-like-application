@@ -2,7 +2,7 @@ import React from 'react'
 import "./scss/footer.scss"
 const Footer = (props) =>{
     return (
-    <footer class="text-center text-lg-start text-dark footer" style={{backgroundColor: "#ECEFF1"}}>
+    <footer class="text-center text-lg-start text-dark footer mt-5" style={{backgroundColor: "#ECEFF1"}}>
         {/* Section: Links */}
         <section class="p-2">
           <div class="container text-center text-md-start mt-5">

@@ -16,13 +16,21 @@ router.get("/", function (req, res) {
 
 router.get("/reservation", function (req, res) {
   console.log(req.query.userId);
-  collection.find({ userId: req.query.userId },
-    function (err, reservations) {
-      if (err) throw err;
-      res.json(reservations);
-    }
-  );
+  collection.find({ userId: req.query.userId }, function (err, reservations) {
+    if (err) throw err;
+    res.json(reservations);
+  });
 });
+
+router.get("/getDatesList", function (req, res) {
+  console.log(req.query.propId);
+  collection.find({ propId: req.query.propId }, function (err, reservations) {
+    if (err) throw err;
+    res.json(reservations);
+  });
+});
+
+
 
 router.put("/", function (req, res) {
   //req.body is used to read form input
@@ -54,23 +62,23 @@ router.post("/", function (req, res) {
       title: req.body.title,
       images: req.body.images,
       address: req.body.address,
-      hostName: req.body.hostName
+      hostName: req.body.hostName,
     },
     function (err, reservation) {
       if (err) throw err;
       // if insert is successfull, it will return newly inserted object
+      res.json(reservation);
     }
   );
 });
 
-router.delete("/", function (req, res) { //cancel reservation - user page
+router.delete("/", function (req, res) {
+  //cancel reservation - user page
   collection.remove(
     { reservationId: Number(req.query.reservationId) },
     function (err, reservation) {
       if (err) throw err;
       res.json(reservation);
-      
-      
     }
   );
 });
